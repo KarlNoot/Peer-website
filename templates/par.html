@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mi Proyteco Patito</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/styles.css')}}">
+    </head>
+    <body>
+        <div class="contenedor">
+            <form action="{{ url_for('es_par')}}" method="POST">
+                <h1>Bienvenido</h1>
+                <label>Ingresa tu un valor númerico:</label>
+                <input type="number" name="value">
+                <button class="boton-formulario">Aceptar</button>
+            </form>
+            {% if resultado is not none %}
+                <p>¿El número escrito es par?: {{ resultado }}</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
