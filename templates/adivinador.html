@@ -6,19 +6,20 @@
     </head>
     <body>
         <div class="contenedor">
-            <form action="{{ url_for('es_par')}}" method="POST">
-                <h1>Determinador de Números Pares</h1>
+            <form action="{{ url_for('adivinar')}}" method="POST">
+                <h1>Adivinador de numeros</h1>
                 <label>Ingresa un valor numérico:</label>
                 <input type="number" name="value">
                 <button class="boton-formulario">Aceptar</button>
             </form>
                 {% if resultado %}
-                    <p class="es-par"> Sí es par</p>
+                    <p class="adivine">Adivine el numero que ingresate</p>
                     <img class="imagen-cheems" src="{{ url_for('static', filename='images/cheems bueno.jpg') }}" alt="Cheems bueno">
                 {% else %}
-                    <p class="no-es-par">No es par</p>
+                    <p class="no-adivine">No adivine el numero el cual ingresaste lol, sera para la proxima</p>
                     <img class="imagen-cheems" src="{{ url_for('static', filename='images/cheems malo.jpg') }}" alt="Cheems malo">
                 {% endif %}
+            <a href="{{ url_for('par')}}" style="color: black;">Haz click aqui para entrar al determinador de pares</a>
         </div>
     </body>
 </html>

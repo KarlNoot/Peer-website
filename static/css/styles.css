@@ -4,11 +4,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
+    padding: 40px;
     min-height: 100vh;
 }
 
 .contenedor{
-    width: 200px;
+    width: 300px;
     /* Margin es la distancia del borde hacia afuera */
     /*1-.Top, bottom 2.- Right, left*/
     margin: 0;
@@ -35,6 +37,33 @@ input{
     padding: 10px;
     margin-top: 10px;
     border: none;
+}
+
+.es-par{
+    font-family: 'Courier New', Courier, monospace;
+    color: #0a9bef;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.no-es-par{
+    font-family: 'Courier New', Courier, monospace;
+    color: #ef0a0a;
+    text-align: center;
+    margin-top: 20px;
+}
+.adivine{
+    font-family: 'Courier New', Courier, monospace;
+    color: #0a9bef;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.no-adivine{
+    font-family: 'Courier New', Courier, monospace;
+    color: #ef0a0a;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .imagen-cheems{

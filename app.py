@@ -1,5 +1,6 @@
 from flask import Flask, render_template,  request
 from entidades.number import Number
+from entidades.adivinar import Adivinar
 
 app = Flask(__name__)
 
@@ -30,6 +31,21 @@ def es_par():
         return render_template('par.html', resultado = resultado)
     except (ValueError):
         return render_template('par.html', resultado = "Error: Ingrese un número válido")
+    
+@app.route('/adivinador')
+def adivinador():
+   return render_template ('adivinador.html', resultado=None)
+
+@app.route('/adivinar', methods= ['POST'])
+def adivinar():
+    try:
+        num1 = int(request.form.get('value'))
+
+        numero = Adivinar(num1)
+        resultado = numero.adivinar_proceso()
+        return render_template('adivinador.html', resultado = resultado)
+    except (ValueError):
+        return render_template('adivinador.html', resultado = "Error: Ingrese un número válido")
 
 if __name__ == "__main__":
     app.run(debug=True)
