@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mi Proyteco Patito</title>
-        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/styles.css')}}">
+        <title>Mi Proyecto Patito</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css')}}">
     </head>
     <body>
         <div class="contenedor">
             <form action="{{ url_for('es_par')}}" method="POST">
-                <h1>Bienvenido</h1>
-                <label>Ingresa tu un valor númerico:</label>
+                <h1>Determinador de Números Pares</h1>
+                <label>Ingresa un valor numérico:</label>
                 <input type="number" name="value">
                 <button class="boton-formulario">Aceptar</button>
             </form>
-            {% if resultado is not none %}
-                <p>¿El número escrito es par?: {{ resultado }}</p>
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% elif resultado is not none %}
+                {% if resultado %}
+                    <p>Sí es par</p>
+                    <img class="imagen-cheems" src="{{ url_for('static', filename='images/cheems bueno.jpg') }}" alt="Cheems bueno">
+                {% else %}
+                    <p>No es par</p>
+                    <img class="imagen-cheems" src="{{ url_for('static', filename='images/cheems malo.jpg') }}" alt="Cheems malo">
+                {% endif %}
             {% endif %}
         </div>
     </body>

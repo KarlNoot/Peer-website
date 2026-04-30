@@ -30,7 +30,6 @@ def es_par():
         return render_template('par.html', resultado = resultado)
     except (ValueError):
         return render_template('par.html', resultado = "Error: Ingrese un número válido")
-    
 
 if __name__ == "__main__":
     app.run(debug=True)
